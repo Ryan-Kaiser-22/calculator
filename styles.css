@@ -8,6 +8,9 @@ body {
     border: 5px solid black;
     border-radius: 8px;
     padding: 10px;
+    width: 176px;
+    
+
 }
 
 .window {
@@ -19,12 +22,15 @@ body {
     font-size: 20px;
     color: #4CAF50;
     background-color: #222;
+    white-space :nowrap;
+    overflow: hidden;
 }
 
 .buttons {
     display : flex;
     flex-direction: row;
     max-width : 500px;
+    justify-content: center;
 }
 
 button {
