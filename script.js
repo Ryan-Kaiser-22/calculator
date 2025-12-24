@@ -4,6 +4,7 @@ const equalButton = document.getElementById('=');
 const clearButton = document.getElementById('C');
 const operators = ['+', '-', 'x', '÷'];
 const calcContainer = document.getElementById('calc-container');
+const bodyImage = document.getElementById('body-image');
 // Set equals check flag to false to allow chaining ops for next equation.  
 // True will only be enabled after '=' button click to enable fresh number entry for new equation. 
 let lastInputWasEquals = false;
@@ -93,12 +94,13 @@ allButtons.forEach(button => {
                 if (calcInWindow === "SELF DESTRUCT") {
                     displayWindow.textContent = "SELF DESTRUCT";
                     // RED ALERT MODE ACTIVE
-                    calcContainer.classList.add('error');  
+                    calcContainer.classList.add('error');
+                    bodyImage.classList.add('error');  
                     setTimeout(() => {
-                        calcContainer.classList.remove('error');  
-                        // Optional: clear the display after it fades back
+                        calcContainer.classList.remove('error');
+                        bodyImage.classList.remove('error');  
                         displayWindow.textContent = '';
-                    }, 3000);
+                    }, 6000);
                     lastInputWasEquals = false;
                     return;
                 }
@@ -123,10 +125,12 @@ allButtons.forEach(button => {
                     displayWindow.textContent = "SELF DESTRUCT";
                     // RED ALERT MODE ACTIVE
                     calcContainer.classList.add('error');
+                    bodyImage.classList.add('error');
                     setTimeout(() => {
                         calcContainer.classList.remove('error');
+                        bodyImage.classList.remove('error');
                         displayWindow.textContent = '';  
-                    }, 3000);
+                    }, 6000);
                     lastInputWasEquals = false;  
                 } else {
                     displayWindow.textContent = result;
